@@ -53,9 +53,9 @@ impl Snake{
         
         let head= self.get_head();
         let new_head= match self.direction{
-            Direction::Up => Position {x: head.x, y: head.y+1},
+            Direction::Up => Position {x: head.x, y: head.y.saturating_sub(1)},
             Direction::Down => Position {x: head.x, y: head.y+1},
-            Direction::Left => Position {x: head.x-1, y: head.y},
+            Direction::Left => Position {x: head.x.saturating_sub(1), y: head.y},
             Direction::Right => Position {x: head.x+1, y: head.y},
         };
         self.body.insert(0, new_head);

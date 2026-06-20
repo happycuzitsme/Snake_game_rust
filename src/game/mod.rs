@@ -1,4 +1,4 @@
-use super::snake::{Snake, Position};
+use super::snake::Snake;
 use super::food::Food;
 
 pub struct Game{
@@ -13,7 +13,7 @@ pub struct Game{
 impl Game {
     pub fn new(width: u16, height: u16) -> Self{
         let snake= Snake::new(width/2, height/2);
-        let food= Food::new(width-1, height-1);
+        let food= Food::new(width-1, height-1, &snake.body);
 
         Game{
             snake, 
@@ -61,8 +61,8 @@ impl Game {
         let head= self.snake.get_head();
         if head.x==self.food.position.x && head.y== self.food.position.y{
             self.snake.grow();
-            self.score +=0;
-            self.food.respawn(self.max_x, self.max_y);
+            self.score += 1;
+            self.food.respawn(self.max_x, self.max_y, &self.snake.body);
         }
     
     }
