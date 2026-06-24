@@ -34,10 +34,12 @@ impl Game {
         }
 
         //Self collision
-        for segment in &self.snake.body[1..]{
-            if head.x == segment.x && head.y == segment.y{
-                self.game_over= true;
-                return;
+        if self.snake.body.len() >= 4 {
+            for segment in &self.snake.body[1..]{
+                if head.x == segment.x && head.y == segment.y{
+                    self.game_over= true;
+                    return;
+                }
             }
         }
     }
