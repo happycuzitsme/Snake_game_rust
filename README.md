@@ -358,9 +358,3 @@ nano README.md
 
 ---
 
-**Reply with:**
-```
-README COPIED!
-- All documentation complete
-- Ready for final submission
-```
