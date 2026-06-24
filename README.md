@@ -1,6 +1,4 @@
-## ✅ README.md - Copy and Paste Ready!
 
-```markdown
 # 🐍 Snake Game in Rust
 
 A classic Snake game built in Rust, running in the terminal with real-time keyboard controls.
